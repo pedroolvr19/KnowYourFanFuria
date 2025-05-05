@@ -1,27 +1,41 @@
 {
-    "nome": "a",
-    "cpf": "12",
-    "endereco": "a",
-    "email": "pppg947@gmail",
+    "nome": "Pedro Guilherme Oliveira de Souza Ferreira",
+    "cpf": "122345678",
+    "endereco": "Rua Doutor João José Ribeiro, 75",
+    "email": "pg9967740@gmail.com",
     "interesses": [
-        "a"
+        "cs2",
+        "furia",
+        "Fallen",
+        "yekindar"
     ],
     "times_favoritos": [
-        "a"
+        "Furia",
+        "pain",
+        "mibr"
     ],
     "jogadores_favoritos": [
-        "a"
+        "Fallen",
+        "Niko"
     ],
     "atividades": [
-        "a"
+        "Streams",
+        "jogar",
+        "participar da comunidade"
     ],
     "eventos": [
-        "a"
+        "Twitch"
     ],
     "compras": [
-        "a"
+        "Merch"
     ],
     "links_esports": [
-        "a"
+        "etc etc"
+    ],
+    "detected_esports_keywords": [
+        "falleN",
+        "FURIA",
+        "CS2",
+        "Fallen"
     ]
 }

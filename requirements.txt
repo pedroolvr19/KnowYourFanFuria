@@ -1,0 +1,12 @@
+# Bibliotecas necessárias para o projeto Know Your Fan Esports
+
+# Framework Web
+Flask
+
+# Para processar links (buscar e raspar conteúdo)
+requests
+beautifulsoup4
+
+# Para processamento de imagem (Pillow) e OCR (pytesseract) - para funcionalidades futuras como upload de documentos
+Pillow
+pytesseract
