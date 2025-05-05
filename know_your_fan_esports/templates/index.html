@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+    <title>FURIA Know Your Fan - Seu Perfil</title>
+    <style>
+        /* Cores inspiradas na FURIA: Preto (#1a1a1a ou #000), Amarelo/Dourado (#ffda00) */
+        body {
+            font-family: 'Arial', sans-serif; /* Fonte padrão, pode tentar uma mais "gamer" se tiver */
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a; /* Fundo preto/muito escuro */
+            color: #f0f0f0; /* Cor do texto principal (branco/cinza claro) */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #282828; /* Fundo do container (cinza escuro) */
+            padding: 30px;
+            border-radius: 8px; /* Cantos arredondados */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra mais escura */
+        }
+        .header {
+             text-align: center;
+             margin-bottom: 30px;
+             border-bottom: 3px solid #ffda00;
+             padding-bottom: 20px;
+        }
+        .header img {
+            max-width: 150px; /* Tamanho máximo da imagem */
+            height: auto; /* Mantém a proporção */
+            margin-bottom: 10px; /* Espaço entre a imagem e o título */
+        }
+        .header h1 {
+             color: #ffda00; /* Cor amarela/dourada */
+             margin: 0; /* Remove margem padrão do h1 dentro do header */
+             padding: 0; /* Remove padding padrão do h1 dentro do header */
+             border: none; /* Remove borda padrão do h1 */
+             text-transform: uppercase; /* Texto em maiúsculas, estilo FURIA */
+             font-size: 2em; /* Tamanho da fonte do título principal */
+        }
+        h2 {
+            color: #ffda00; /* Cor amarela/dourada para subtítulos */
+            border-bottom: 2px solid #ffda00; /* Linha amarela/dourada sob os títulos */
+            padding-bottom: 10px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        form div {
+            margin-bottom: 20px;
+            padding: 15px; /* Aumenta padding interno */
+            border: 1px solid #3a3a3a; /* Borda sutil */
+            border-radius: 5px;
+            background-color: #1a1a1a; /* Fundo dos grupos de campos */
+        }
+         form div:last-child {
+             margin-bottom: 30px;
+         }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #f0f0f0; /* Cor do label (branco/cinza claro) */
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: calc(100% - 20px); /* Ajusta largura considerando padding */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #555; /* Borda escura */
+            border-radius: 4px;
+            font-size: 1rem; /* Tamanho de fonte razoável */
+            background-color: #3a3a3a; /* Fundo dos campos de input */
+            color: #f0f0f0; /* Cor do texto digitado */
+        }
+         input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+             border-color: #ffda00; /* Borda amarela no foco */
+             outline: none; /* Remove outline padrão */
+             box-shadow: 0 0 5px rgba(255, 218, 0, 0.5); /* Sombra amarela no foco */
+         }
+         textarea {
+             resize: vertical;
+         }
+        button {
+            display: block; /* Botão ocupa a largura total */
+            width: 100%;
+            background-color: #ffda00; /* Fundo amarelo/dourado */
+            color: #1a1a1a; /* Texto preto */
+            padding: 12px 20px; /* Aumenta o padding */
+            border: none; /* Remove a borda padrão */
+            border-radius: 5px; /* Borda mais arredondada */
+            cursor: pointer;
+            font-size: 1.1rem; /* Fonte um pouco maior */
+            font-weight: bold;
+            text-transform: uppercase; /* Texto do botão em maiúsculas */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e6c800; /* Amarelo um pouco mais escuro no hover */
+            color: #000; /* Garante que o texto continue preto */
+        }
+        small {
+            display: block;
+            margin-top: 5px;
+            color: #aaa; /* Cor mais clara para dicas */
+            font-size: 0.9rem;
+        }
+         /* Estilo para placeholders (texto dentro do input antes de digitar) */
+         ::placeholder {
+             color: #bbb;
+             opacity: 1; /* Garante visibilidade no Firefox */
+         }
+         :-ms-input-placeholder { /* Suporte IE 10-11 */
+             color: #bbb;
+         }
+         ::-ms-input-placeholder { /* Suporte Edge */
+             color: #bbb;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='furia_logo.png') }}" alt="Logo da FURIA">
+            <h1>FURIA KNOW YOUR FAN</h1>
+        </div>
+
+
+        <form method="post" action="/save">
+
+            <div>
+                <h2>Dados Básicos</h2>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome...">
+            </div>
+
+            <div>
+                <label for="cpf">CPF (apenas números):</label>
+                <input type="text" id="cpf" name="cpf" pattern="\d*" title="Apenas números" placeholder="Ex: 12345678900">
+            </div>
+
+            <div>
+                <label for="endereco">Endereço Completo:</label>
+                <input type="text" id="endereco" name="endereco" placeholder="Sua rua, número, bairro...">
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com">
+            </div>
+
+            <div>
+                <h2>Interesses em Esports</h2>
+                <label for="interesses">Quais jogos, equipes, jogadores você acompanha/joga? (Separar por vírgula)</label>
+                <input type="text" id="interesses" name="interesses" placeholder="CS2, FURIA, Fallen, Valorant">
+                <small>Ex: CS2, FURIA, Fallen, Valorant</small>
+            </div>
+
+             <div>
+                  <label for="times_favoritos">Times Favoritos (Separar por vírgula):</label>
+                  <input type="text" id="times_favoritos" name="times_favoritos" placeholder="FURIA, LOUD, Liquid">
+                  <small>Ex: FURIA, LOUD, Liquid</small>
+              </div>
+
+              <div>
+                  <label for="jogadores_favoritos">Jogadores Favoritos (Separar por vírgula):</label>
+                  <input type="text" id="jogadores_favoritos" name="jogadores_favoritos" placeholder="Fallen, s1mple, aspas">
+                  <small>Ex: Fallen, s1mple, aspas</small>
+              </div>
+
+
+            <div>
+                <h2>Atividades e Eventos (último ano)</h2>
+                <label for="atividades">Quais atividades você fez relacionadas a esports (assistir streams, jogar, participar de comunidade - separar por vírgula)?</label>
+                <input type="text" id="atividades" name="atividades" placeholder="Assisti Major no Rio, Joguei campeonato amador online">
+                <small>Ex: Assisti Major no Rio, Joguei campeonato amador online</small>
+            </div>
+
+             <div>
+                  <label for="eventos">Quais eventos de esports você participou (online ou presencial - separar por vírgula)?</label>
+                  <input type="text" id="eventos" name="eventos" placeholder="IEM Rio 2023, Assistir CBLOL pela Twitch">
+                  <small>Ex: IEM Rio 2023, Assistir CBLOL pela Twitch</small>
+              </div>
+
+            <div>
+                <h2>Compras Relacionadas (último ano)</h2>
+                <label for="compras">Quais compras você fez relacionadas a esports (merch, itens in-game, ingressos - separar por vírgula)?</label>
+                <input type="text" id="compras" name="compras" placeholder="Camisa FURIA, Passe de Batalha Valorant">
+                <small>Ex: Camisa FURIA, Passe de Batalha Valorant</small>
+            </div>
+
+            <div>
+                <h2>Links de Perfis/Conteúdo Relevantes</h2>
+                <label for="links_esports">Compartilhe links de perfis em sites de esports ou conteúdo relevante (Separar por vírgula):</label>
+                <textarea id="links_esports" name="links_esports" rows="4" placeholder="Link para seu perfil na Gamers Club, link de um vídeo seu jogando..."></textarea>
+                <small>Ex: link para seu perfil na Gamers Club, link de um vídeo seu jogando. A validação automática de conteúdo ainda não está implementada.</small>
+            </div>
+
+
+            <button type="submit">SALVAR MEU PERFIL</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
