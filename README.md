@@ -12,6 +12,7 @@ python -m venv .venv
 
 Dependencias
 pip install Flask requests beautifulsoup4
+pip install gunicorn
 
 Instalar pastas
 mkdir data templates static
